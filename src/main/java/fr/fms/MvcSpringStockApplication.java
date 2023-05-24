@@ -36,8 +36,15 @@ public class MvcSpringStockApplication implements CommandLineRunner {
 		//articleRepository.save(new Article(null,"Google Pixel 7a", 550));
 		//articleRepository.save(new Article(null,"Xiaomi Mi 11", 480));
 		//articleRepository.save(new Article(null,"Nokia Xr 21",599));
+		//articleRepository.save(new Article(null,"Motorola edge 30 ultra", 899));
+		//articleRepository.save(new Article(null,"Honor Magic5 Pro", 499.70));
+		//articleRepository.save(new Article(null,"Wiko Y82", 287));
+		//articleRepository.save(new Article(null,"Google Pixel 7 Pro", 799));
+		//articleRepository.save(new Article(null,"Nokia 3310", 880));
+		//articleRepository.save(new Article(null,"Motorola edge 30 fusion", 699));
 
-
+		
+		
 		// display articles console
 		System.out.println();
 		articleRepository.findAll().forEach(a -> System.out.println(a));
