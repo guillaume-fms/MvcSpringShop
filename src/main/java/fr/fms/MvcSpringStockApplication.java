@@ -25,7 +25,7 @@ public class MvcSpringStockApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		System.out.println("Hello My CommandLineRunner !!");
-
+		System.out.println();
 
 
 
@@ -39,7 +39,9 @@ public class MvcSpringStockApplication implements CommandLineRunner {
 
 
 		// display articles console
+		System.out.println();
 		articleRepository.findAll().forEach(a -> System.out.println(a));
+		System.out.println();
 
 
 
