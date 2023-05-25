@@ -37,7 +37,7 @@ public class ArticleController {
 		
 // s'agissant de l'activation des liens de navigation, il faut transmettre à la vue la page courante
 // thymeleaf pourra delors vérifier si la page courante est égae à l'index de la page active
-			
+		model.addAttribute("currentPage", page);
 		return "articles"; 
 	}
 	
