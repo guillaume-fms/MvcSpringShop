@@ -1,7 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://thymeleaf.org"
-	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-	layout:decorate="layout">
+<html xmlns:th="http://thymeleaf.org">
 <head>
 <meta charset="Utf-8">
 <title>Liste des articles</title>
@@ -12,23 +10,19 @@
 </head>
 <body>
 
-<div layout:fragment="content">
-	
-	<br/>
-	<p class="intro">Salut et bienvenue à vous, sur mon site E-commerce de smartphones !!
-	<br/>
-	Tout va très mal, jusqu'ici !!!</p>
+	<h1 style="text-align: center">Phones List</h1>
+	<p>Salut et bienvenue à vous !!</p>
+	<p>Tout va très mal, jusqu'ici !!!</p>
 	<br />
 
 	<div class="card border-warning mb-5">
-		<div class="liste">Voici la liste des articles &#128540;</div>
+		<div class="bg-transparent border-warning">Voici la liste des articles &#128540;</div>
 		<div class="card-body">
 		<form th:action="@{/index}" method="get">   <!-- validation du formulaire -> appel la méthode index -->
 		<label>KeyWord</label>
 		<input type="text" name="keyword" th:value="${keyword}"> 
 		<button type="submit" class="btn btn-warning">SEARCH</button>
 		</form>
-		
 		<br/>
 			<table class="table table-striped">
 				<thead class="table-success">
@@ -37,7 +31,7 @@
 						<th>Description</th>
 						<th>Price</th>
 						<th></th>
-						
+						<th></th>
 					</tr>
 				</thead>
 				<tbody class="table-group-divider">
@@ -48,13 +42,11 @@
 						<td>       <!--  après une suppression, pour garder le même contexte ou page -->
 							<a class="btn btn-danger" th:href="@{/delete(id=${a.id}, page=${currentPage} , keyword=${keyword})}">DELETE</a>
 						</td>
-	
 					</tr>
-			
 				</tbody>
 			</table>
 
-			<ul class="pagination">
+			<ul class="nav nav-pills">
 															<!-- alignement de la liste -->
 				<li th:class="${currentPage==status.index}?'active':''"       th:each="page,status:${pages}">
 					<!-- 4 activer cette balise si condition v -->                    <!-- 1 pour chaque indice de notre tableau "de pages" -->
@@ -64,6 +56,6 @@
 			</ul>
 		</div>
 	</div>
-</div>
+
 </body>
 </html>

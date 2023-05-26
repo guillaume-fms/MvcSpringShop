@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="layout">
+<head>
+<meta charset="Utf-8">
+<title>Saisie des articles</title>
+</head>
+
+<body>
+	<div layout:fragment="content">
+<br/>
+<br/>
+<p class="intro">Veuillez renseigner les champs de votre nouvel article...</p>
+	<br />
+		<div class="card text-bg-info mb-4" style="max-width: 28rem;">
+			<div class="card-header">Nouvel article</div>
+			<div class="card-body">
+				<form th:action="@{/save}" method="post">
+					<div class="form-group">
+						<label class="control-label"> Description : </label><input
+							class="form-control" type="text" name="description" th:value="${article.description}">
+							<span th:errors="${article.description}" class="text-danger"></span>
+					</div>
+					<br/>
+					<div class="form-group">
+						<label class="control-label"> Price : </label><input
+							class="form-control" type="text" name="price" th:value="${article.price}">
+							<span th:errors="${article.price}" class="text-danger"></span>
+					</div>
+					<br/>
+					<button type="submit" class="btn btn-success">SAVE</button>
+				</form>
+			</div>
+
+		</div>
+	</div>
+</body>
+</html>

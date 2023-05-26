@@ -30,19 +30,22 @@ public class MvcSpringStockApplication implements CommandLineRunner {
 
 
 		// generate Datas articles
-		//articleRepository.save(new Article(null,"Samsung S8", 350));
-		//articleRepository.save(new Article(null,"Samsung S10", 550));
-		//articleRepository.save(new Article(null,"Apple iPhone 14", 1250));
-		//articleRepository.save(new Article(null,"Google Pixel 7a", 550));
-		//articleRepository.save(new Article(null,"Xiaomi Mi 11", 480));
-		//articleRepository.save(new Article(null,"Nokia Xr 21",599));
-		//articleRepository.save(new Article(null,"Motorola edge 30 ultra", 899));
-		//articleRepository.save(new Article(null,"Honor Magic5 Pro", 499.70));
-		//articleRepository.save(new Article(null,"Wiko Y82", 287));
-		//articleRepository.save(new Article(null,"Google Pixel 7 Pro", 799));
-		//articleRepository.save(new Article(null,"Nokia 3310", 880));
-		//articleRepository.save(new Article(null,"Motorola edge 30 fusion", 699));
-
+//		articleRepository.save(new Article(null,"Samsung S8", 350));
+//		articleRepository.save(new Article(null,"Samsung S10", 550));
+//		articleRepository.save(new Article(null,"Apple iPhone 14", 1250));
+//		articleRepository.save(new Article(null,"Google Pixel 7a", 550));
+//		articleRepository.save(new Article(null,"Xiaomi Mi 11", 480));
+//		articleRepository.save(new Article(null,"Nokia Xr 21",599));
+//		articleRepository.save(new Article(null,"Motorola edge 30 ultra", 899));
+//		articleRepository.save(new Article(null,"Honor Magic5 Pro", 499.70));
+//		articleRepository.save(new Article(null,"Wiko Y82", 287));
+//		articleRepository.save(new Article(null,"Google Pixel 7 Pro", 799));
+//		articleRepository.save(new Article(null,"Nokia 3310", 880));
+//		articleRepository.save(new Article(null,"Motorola edge 30 fusion", 699));
+//		articleRepository.save(new Article(null,"Huawei P40 Pro", 799));
+//		articleRepository.save(new Article(null,"OnePlus 8T", 599));
+//		articleRepository.save(new Article(null,"Oppo Reno", 499));
+//		articleRepository.save(new Article(null,"Oppo Find X2 Pro", 88899));
 		
 		
 		// display articles console

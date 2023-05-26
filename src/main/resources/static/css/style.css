@@ -1,0 +1,89 @@
+/*.title {
+        font-family: "Kanit", serif;
+        font-size: 45px;
+        font-style: bold;
+        text-align:center;
+        color:	#F0FFFF;
+}*/
+
+.intro{
+  font-family: 'Playfair Display', serif;
+  font-style: normal;
+  font-size:22px;
+  color: rgb(3, 85, 99);
+  animation-duration: 3s;
+  animation-name: slidein;
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
+
+  to {
+    margin-left: 100%;
+    width: 100%;
+  }
+}
+
+.navbar-brand {
+	font-family: 'Playfair Display', serif;
+    font-style: normal;
+    font-size:27px;
+}
+
+.liste{
+font-family: 'Playfair Display', serif;
+  font-style: normal;
+  font-size:23px;	
+}
+
+.footer {
+	font-family: "Roboto", serif;
+        font-size: 25px;
+        display: flex;
+        justify-content: center;
+        padding: 5px;
+        background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+        color: #fff;
+        height:80px;
+        border: solid black;
+}
+
+img:hover {
+	width: 198px;
+    float: right;
+    border-radius: 100%;
+	clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%);
+	/* Start the vibrate animation with duration 1.5 seconds */
+  	animation: vibrate 1.5s;
+
+  /* When the animation is finished, start again */
+  	animation-iteration-count: infinite;
+}  
+
+@keyframes vibrate {
+60% { transform: rotate(2deg);
+ }
+}
+
+
+/* CSS Pagination*/
+.pagination {
+  display: inline-block;
+}
+
+.pagination a {
+  color: bluecadet;
+  float: left;
+  font-size: 20px;
+  font-family: 'Playfair Display', serif;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+.pagination a:hover:not(.active) {
+  background-color: #ddd;
+  border-radius: 5px;
+}
