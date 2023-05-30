@@ -9,7 +9,7 @@
 .intro{
   font-family: 'Playfair Display', serif;
   font-style: normal;
-  font-size:22px;
+  font-size:25px;
   color: rgb(3, 85, 99);
   animation-duration: 3s;
   animation-name: slidein;
@@ -22,7 +22,7 @@
   }
 
   to {
-    margin-left: 100%;
+    margin-left: 0%;
     width: 100%;
   }
 }
@@ -36,36 +36,36 @@
 .liste{
 font-family: 'Playfair Display', serif;
   font-style: normal;
-  font-size:23px;	
+  font-size:25px;	
 }
 
 .footer {
-	font-family: "Roboto", serif;
+	font-family: "Kanit", serif;
         font-size: 25px;
         display: flex;
         justify-content: center;
         padding: 5px;
-        background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+        background: rgb(34,193,195);
+		background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(45,91,253,0.541036482952556) 100%);
         color: #fff;
         height:80px;
         border: solid black;
 }
 
 img:hover {
-	width: 198px;
+	width: 250px;
     float: right;
     border-radius: 100%;
-	clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%);
+	clip-path: polygon(50% 0%, 80% 10%, 100% 35%, 100% 70%, 80% 90%, 50% 100%, 20% 90%, 0% 70%, 0% 35%, 20% 10%);
 	/* Start the vibrate animation with duration 1.5 seconds */
-  	animation: vibrate 1.5s;
+  	animation: vibrate 2.5s;
 
   /* When the animation is finished, start again */
   	animation-iteration-count: infinite;
 }  
 
 @keyframes vibrate {
-60% { transform: rotate(2deg);
- }
+60% { transform: rotate(3deg);}
 }
 
 
@@ -80,8 +80,10 @@ img:hover {
   font-size: 20px;
   font-family: 'Playfair Display', serif;
   padding: 8px 16px;
-  text-decoration: none;
+  text-decoration: underline;
 }
+
+
 
 .pagination a:hover:not(.active) {
   background-color: #ddd;

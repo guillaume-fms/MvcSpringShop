@@ -7,6 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+//import javax.persistence.ManyToOne;
 import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -28,13 +29,19 @@ public class Article implements Serializable {
 	//private double price;
 	
 	
+	// messages erreurs description
 	@NotNull
-	@Size(min=10, max=50)
+	@Size(min=5, max=40)
 	private String description;
 	
+	// messages erreurs 
 	@DecimalMin("50")
 	private double price;
-
+	
+	
+	@ManyToOne
+	private Category category;    // plusieurs articles sont liés à une seule catégorie
+	
 }
 
 

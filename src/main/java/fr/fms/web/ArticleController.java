@@ -57,7 +57,7 @@ public class ArticleController {
 
 	@GetMapping("/article")
 	public String article(Model model) {
-		model.addAttribute("article", new Article());  // injection d'un article par défault dans le formulaire
+		model.addAttribute("article", new Article());  // injection d'un article par défault dans le formulaire de la vue article
 		return "article";
 	}
 	
