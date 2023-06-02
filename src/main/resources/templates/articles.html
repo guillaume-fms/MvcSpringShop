@@ -6,65 +6,75 @@
 <meta charset="Utf-8">
 <title>Liste des articles</title>
 <!--  Ide a besoin de ce lien -->
-<link rel="stylesheet" href="../static/css/bootstrap.min.css"
-	th:href="@{css/bootstrap.min.css}">
+<link rel="stylesheet" href="../static/css/bootstrap.min.css" 
+th:href="@{css/bootstrap.min.css}">
 <!--  thymeleaf a besoin de ce lien -->
 </head>
 <body>
 
-<div layout:fragment="content">
-	
-	<br/>
-	<p  th:if ="${currentPage==0}"class="intro">Salut et bienvenue à vous, sur mon site E-commerce de smartphones !!
-	<br/>
-	Tout va très mal, jusqu'ici !!!</p>
-	<br />
+	<div layout:fragment="content">
+		<br />
+		<!-- Affichage des Catégories -->
+		<div class="d-grid gap-2 d-md-block" th:each="c:${categories}">
+			<a class="btn btn-outline-success me-md-5" th:href="@{/index(idCat=${c.id}, keyword=${keyword})}" th:text="${c.name}"></a>
+		</div>
+		<br /><br />
 
-	<div class="border border-warning">
-		<div class="liste">Voici la liste des articles &#128540;</div>
-		<div class="card-body">
-		<form th:action="@{/index}" method="get">   <!-- validation du formulaire -> appel la méthode index -->
-		<label>KeyWord : </label>
-		<input type="text" name="keyword" th:value="${keyword}"> 
-		<button type="submit" class="btn btn-warning my-2 my-sm-0">SEARCH</button>
-		</form>
-		
-		<br/>
-			<table class="table table-striped">
-				<thead class="table-success">
-					<tr>
-						<th>ID</th>
-						<th>Description</th>
-						<th>Price</th>
-						<th></th>
+		<p th:if="${currentPage==0}" class="intro">Bonjour et bienvenue à vous, sur mon site E-commerce !!</p>
+		<br />
+
+		<div class="border border-warning">
+			<div class="liste">Voici la liste des articles &#128540;</div>
+			<div class="card-body">
+				<form th:action="@{/index}" method="get">
+					<!-- validation du formulaire -> appel la méthode index -->
+					<label>KeyWord : </label> <input type="text" name="keyword"
+						th:value="${keyword}">
+					<button type="submit" class="btn btn-warning me-2">SEARCH</button>
+				</form>
+
+				<br />
+
+				<!-- Affichage des Articles -->
+				<table class="table table-striped">
+					<thead class="table-success">
+						<tr>
+							<th>ID</th>
+							<th>Description</th>
+							<th>Price</th>
+							<th></th>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody class="table-group-divider">
+						<tr th:each="a:${listArticle}">
+							<td th:text="${a.id}"></td>
+							<td th:text="${a.description}"></td>
+							<td th:text="${a.price}"></td>
+							<td></td>
+							<td>
+								<!--  après une suppression, pour garder le même contexte ou page -->
+								<a class="btn btn btn-danger me-md-5"
+								th:href="@{/delete(id=${a.id}, page=${currentPage} , keyword=${keyword})}">DELETE</a>
+								
+								<a class="btn btn btn-info">EDIT</a>
 					
-					</tr>
-				</thead>
-				<tbody class="table-group-divider">
-					<tr th:each="a:${listArticle}">
-						<td th:text="${a.id}"></td>
-						<td th:text="${a.description}"></td>
-						<td th:text="${a.price}"></td>
-						<td>       <!--  après une suppression, pour garder le même contexte ou page -->
-							<a class="btn btn btn-danger" th:href="@{/delete(id=${a.id}, page=${currentPage} , keyword=${keyword})}">DELETE</a>
-							
-						</td>
-	
-					</tr>
-			
-				</tbody>
-			</table>
+							</td>
+						</tr>
+					</tbody>
+				</table>
 
-			<ul class="pagination">
-															<!-- alignement de la liste -->
-				<li th:class="${currentPage==status.index}?'active':''"       th:each="page,status:${pages}">
-					<!-- 4 activer cette balise si condition v -->                    <!-- 1 pour chaque indice de notre tableau "de pages" -->
-					<a th:href="@{/index(page=${status.index}, keyword=${keyword})}"    th:text="${status.index}"></a> 
-					<!-- 3 lien vers un indice/"page" / 5 motclé=motclé courant / 2 afficher l'indice du tableau -->        
-				</li>
-			</ul>
+				<ul class="pagination">
+					<!-- alignement de la liste -->
+					<li th:class="${currentPage==status.index}?'active':''"
+						th:each="page,status:${pages}">
+						<!-- 4 activer cette balise si condition v --> <!-- 1 pour chaque indice de notre tableau "de pages" -->
+						<a th:href="@{/index(page=${status.index},idCat=${idCat}, keyword=${keyword})}"
+						th:text="${status.index}"></a> <!-- 3 lien vers un indice/"page" / 5 motclé=motclé courant / 2 afficher l'indice du tableau -->
+					</li>
+				</ul>
+			</div>
 		</div>
 	</div>
-</div>
 </body>
 </html>

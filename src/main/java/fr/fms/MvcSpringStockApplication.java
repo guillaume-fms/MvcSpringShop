@@ -2,15 +2,13 @@ package fr.fms;
 
 
 
-import org.hibernate.annotations.common.util.impl.LoggerFactory;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import fr.fms.dao.ArticleRepository;
 import fr.fms.dao.CategoryRepository;
-import fr.fms.entities.Article;
-import fr.fms.entities.Category;
 
 
 @SpringBootApplication
@@ -92,8 +90,13 @@ public class MvcSpringStockApplication implements CommandLineRunner {
 				  articleRepository.save(new Article(null,"Hewlett Packard Spectre",1799,pc));
 				  articleRepository.save(new Article(null,"Sony Xperia XA1",380,smartphone));
 				  articleRepository.save(new Article(null,"Honor Magic5 Pro",499.70,smartphone)); 
-				  articleRepository.save(new Article(null,"OnePlus 8T",599,smartphone));*/
-				 
+				  articleRepository.save(new Article(null,"OnePlus 8T",599,smartphone));
+				  articleRepository.save(new Article(null,"Oppo Reno 8",400,smartphone));
+				  articleRepository.save(new Article(null,"Xiaomi M11",1380.9,smartphone));
+				  articleRepository.save(new Article(null,"Apple MacBook Air M2",1340,pc));
+				  articleRepository.save(new Article(null,"Lenovo Ideapad 17",980.5,pc));
+				  articleRepository.save(new Article(null,"Realme Pad Gris",99980,tablet));
+				  articleRepository.save(new Article(null,"Lenovo P11 Pro",5980,tablet));*/
 	}
 
 }	

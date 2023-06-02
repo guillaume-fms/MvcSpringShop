@@ -9,27 +9,40 @@
 
 <body>
 	<div layout:fragment="content">
-<br/>
-<br/>
-<p class="intro">Veuillez renseigner les champs de votre nouvel article...</p>
-	<br />
+		<br /><br />
+		<p class="intro">Veuillez renseigner les champs de votre nouvel article...</p>
+		<br />
 		<div class="card text-bg-info mb-4" style="max-width: 28rem;">
-			<div class="card-header">Votre nouvel article : </div>
+			<div class="card-header">Votre nouvel article :</div>
 			<div class="card-body">
 				<form th:action="@{/save}" method="post">
 					<div class="form-group">
 						<label class="control-label"> Description : </label><input
-							class="form-control" type="text" name="description" th:value="${article.description}">
-							<span th:errors="${article.description}" class="text-danger"></span>
+							class="form-control" type="text" name="description"
+							th:value="${article.description}"> <span
+							th:errors="${article.description}" class="text-danger"></span>
 					</div>
-					<br/>
+					<br />
 					<div class="form-group">
 						<label class="control-label"> Price : </label><input
-							class="form-control" type="text" name="price" th:value="${article.price}">
-							<span th:errors="${article.price}" class="text-danger"></span>
+							class="form-control" type="text" name="price"
+							th:value="${article.price}"> <span
+							th:errors="${article.price}" class="text-danger"></span>
 					</div>
-					<br/>
-					<button type="submit" class="btn btn-success">SAVE</button>
+					<br />
+					<div class="form-group">
+						<label class="control-label"> Category : </label> 
+						<select class="form-control" id="dropDownList">
+							 <option value=""> --- Saisir la catégorie --- </option>
+							<option th:each="categories : ${listeCategories}" th:value="${c.id}" th:text="${c.name}"></option>
+						</select>
+						
+					</div>
+		
+					<br />
+					<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+						<button type="submit" class="btn btn-success me-md-2">SAVE</button>
+					</div>
 				</form>
 			</div>
 
